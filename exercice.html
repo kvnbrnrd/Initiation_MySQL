@@ -28,7 +28,7 @@ Solution : SELECT * FROM `bdd_1` WHERE `email` LIKE '%google.%';
 </p> 
 
 <p>5) Répartition par Etat et le nombre d’enregistrement par état (croissant).<br>
-Solution :
+Solution : SELECT state_code, count(*) FROM `bdd_1` GROUP BY state_code;
 </p> 
 
 <p>6) Insérer un utilisateur, lui mettre à jour son adresse mail puis supprimer l’utilisateur.<br>
