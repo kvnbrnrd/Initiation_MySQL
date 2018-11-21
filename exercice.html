@@ -33,6 +33,10 @@ Solution : SELECT state_code, count(*) FROM `bdd_1` GROUP BY state_code;
 
 <p>6) Insérer un utilisateur, lui mettre à jour son adresse mail puis supprimer l’utilisateur.<br>
 Solution :
+INSERT INTO bdd_1 (id, first_name, last_name, email, gender, ip_address, birth_date, zip_code, avatar_url, state_code, country_code) VALUES
+('0', 'Lorenzo', 'De La Vega', '10bmmn@gmx.com', 'Male', '152.181.43.128', '03/03/1984', '90000', 'http://lespsurmmn.blogspot.com', 'MMN', 'FR')
+UPDATE bdd_1 SET email = 'mamene@gmail.com' WHERE email = '10bmmn@gmx.com'
+DELETE FROM bdd_1 WHERE email = 'mamene@gmail.com'
 </p> 
 
 <p>7) Nombre de femme et d’homme.<br>
@@ -42,8 +46,7 @@ Solution : SELECT gender, count(*) FROM `bdd_1` GROUP BY gender;
 <p>8) Afficher l'âge de chaque personne, puis la moyenne d’âge générale, celle des femmes puis celle des hommes.<br>
 Solution : SELECT TIMESTAMPDIFF(year, STR_TO_DATE(birth_date, '%d/%m/%Y'), NOW()) AS age FROM `bdd_1`;
 SELECT AVG (TIMESTAMPDIFF(year, STR_TO_DATE(birth_date, '%d/%m/%Y'), NOW())) AS average FROM `bdd_1`;
-SELECT AVG (TIMESTAMPDIFF(year, STR_TO_DATE(birth_date, '%d/%m/%Y'), NOW())) AS average FROM `bdd_1` WHERE gender = "Female";
-SELECT AVG (TIMESTAMPDIFF(year, STR_TO_DATE(birth_date, '%d/%m/%Y'), NOW())) AS average FROM `bdd_1` WHERE gender = "Male";
+SELECT gender, AVG (TIMESTAMPDIFF(year, STR_TO_DATE(birth_date, '%d/%m/%Y'), NOW())) AS average FROM `bdd_1` GROUP BY gender
 </p> 
 
 <p>9) Créer deux nouvelles tables, une qui contient l’ensemble des membres de l’ACS, l’autre qui contient les département avec numéros et nom écrit.
