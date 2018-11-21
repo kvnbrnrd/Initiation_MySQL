@@ -36,11 +36,12 @@ Solution :
 </p> 
 
 <p>7) Nombre de femme et d’homme.<br>
-Solution :
+Solution : SELECT gender, count(*) FROM `bdd_1` GROUP BY gender;
 </p> 
 
 <p>8) Afficher l'âge de chaque personne, puis la moyenne d’âge générale, celle des femmes puis celle des hommes.<br>
-Solution :
+Solution : SELECT TIMESTAMPDIFF(year, STR_TO_DATE(birth_date, '%d/%m/%Y'), NOW()) AS age FROM `bdd_1`
+
 </p> 
 
 <p>9) Créer deux nouvelles tables, une qui contient l’ensemble des membres de l’ACS, l’autre qui contient les département avec numéros et nom écrit.
