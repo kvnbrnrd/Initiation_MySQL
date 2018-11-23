@@ -51,7 +51,7 @@ SELECT gender, AVG (TIMESTAMPDIFF(year, STR_TO_DATE(birth_date, '%d/%m/%Y'), NOW
 
 <p>9) Créer deux nouvelles tables, une qui contient l’ensemble des membres de l’ACS, l’autre qui contient les département avec numéros et nom écrit.
 Afficher le nom de chaque apprenant avec son département de résidence.<br>
-Solution :
+Solution : SELECT ACS_1.id, ACS_1.Nom, ACS_1.Prenom, ACS_2.Nom_Dep, ACS_2.Num_Dep FROM ACS_1, ACS_2 WHERE ACS_1.dep_id = ACS_2.id
 </p> 
 
 <p>10) Afficher le résultat du 9) dans une page php (utiliser PDO pour la connexion).<br>
