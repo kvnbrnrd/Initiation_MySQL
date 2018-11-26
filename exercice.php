@@ -9,26 +9,28 @@
     <script src="main.js"></script>
 </head>
 <body>
+
 <?php
 include ('password.php'); 
 try
 {
-    $pdo = new PDO('mysql:host='. $host .';dbname='. $dbname,
-
-    $username,
-
-    $password);
+    $pdo = new PDO('mysql:host='. $host .';dbname='. $dbname, $username, $password);
 }
 catch(Exception $e)
 {
         die('Erreur : '.$e->getMessage());
 }
 
-$reponse = $pdo->query('SELECT * FROM ACS_1');
+$reponse = $pdo->query('SELECT ACS_1.id, ACS_1.Nom, ACS_1.Prenom, ACS_2.Nom_Dep, ACS_2.Num_Dep FROM ACS_1, ACS_2 WHERE ACS_1.dep_id = ACS_2.id');
+
+print_r($reponse->fetchAll());
+// while ($data = $reponse->fetch())
 
 
-while ($data = $reponse->fetch())
-print_r($data);
+foreach($reponse as $key => $value){
+
+};
+
 ?> 
 </body>
 </html>
