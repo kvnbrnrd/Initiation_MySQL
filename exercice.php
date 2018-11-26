@@ -9,6 +9,26 @@
     <script src="main.js"></script>
 </head>
 <body>
-    
+<?php
+include ('password.php'); 
+try
+{
+    $pdo = new PDO('mysql:host='. $host .';dbname='. $dbname,
+
+    $username,
+
+    $password);
+}
+catch(Exception $e)
+{
+        die('Erreur : '.$e->getMessage());
+}
+
+$reponse = $pdo->query('SELECT * FROM ACS_1');
+
+
+while ($data = $reponse->fetch())
+print_r($data);
+?> 
 </body>
 </html>
