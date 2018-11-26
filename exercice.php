@@ -12,6 +12,7 @@
 
 <?php
 include ('password.php'); 
+include ('exercice.html');
 try
 {
     $pdo = new PDO('mysql:host='. $host .';dbname='. $dbname, $username, $password);
@@ -32,5 +33,6 @@ foreach($reponse as $key => $value){
 };
 
 ?> 
+>
 </body>
 </html>
